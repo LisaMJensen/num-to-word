@@ -36,23 +36,35 @@ namespace NumWord
             { 80, "eighty"},
             { 90, "ninety"} };
 
-        string Ones()
+        string output;
+        static string Ones(int num)
         {
             string output = ones[num];
             return output;
         }
-        string Teens()
+        static string Teens(int num)
         {
             string output = teens[num];
             return output;
         }
-        string Tens()
+        static string Tens(int num)
         {
             string output = tens[num];
             return output;
         }
 
-        public static inputCheck()
+        public static bool CheckZero(int num)
+        {
+            if (num == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static string inputCheck(int num)
         {
             if (num > 0 && num < 10)
             {
@@ -74,7 +86,11 @@ namespace NumWord
                 int remainder = num % 100;
                 int hundig = num / 100;
                 Ones(hundig);
-                inputCHeck(remainder);
+                inputCheck(remainder);
+            }
+            else 
+            {
+                return output;
             }
         }
         // TrillianEquations()
